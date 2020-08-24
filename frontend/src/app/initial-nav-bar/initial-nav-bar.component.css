@@ -1,0 +1,40 @@
+.initial{
+  background: #76b852;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #76b852, #8DC26F);
+  background: -moz-linear-gradient(to top, #76b852, #8DC26F);
+  background: -o-linear-gradient(to top, #76b852, #8DC26F);
+  background: linear-gradient(to top, #76b852, #8DC26F);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 2em;
+  background-color: #76b852;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+}
+
+a {
+  color: #ececec;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  margin-left: 2em;
+}
+
+a:hover{
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    background: #fff;
+    padding: 0px;
+    -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    color: #76b852;
+}
+
+h1:hover{
+  color: #fff;
+}

@@ -1,0 +1,49 @@
+.introduction {
+ border: 2px solid #DAE3E1;
+}
+
+.subscription{
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  display: flex;
+  flex-flow: column;
+  margin: 3em;
+  align-items: center;
+  border: 2px solid #DAE3E1;
+  text-align: center;
+}
+
+.subscription:hover {
+  background: #fff;
+  padding: 0px;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
+  margin: 3em;
+  align-items: center;
+  text-align: center;
+}
+
+.plans{
+  display: flex;
+  flex-flow: row;
+}
+
+h3{
+  margin: 1em;
+}
+
+p{
+  font-weight: 500;
+}
+
+.price{
+  align-items: center !important;
+}
+
+li{
+  margin: 1em;
+}
+

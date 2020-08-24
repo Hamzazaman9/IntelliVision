@@ -1,0 +1,40 @@
+<app-user-nav-bar></app-user-nav-bar>
+<app-space-chart></app-space-chart>
+<div  class="content">
+<table *ngIf="userDetails" class="table-fill">
+  <thead>
+      <tr>
+          <th colspan="3" class="text-center">User Details</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>First Name</td>
+          <td>{{userDetails.firstName}}</td>
+      </tr>
+      <tr>
+          <td>Last Name</td>
+          <td>{{userDetails.lastName}}</td>
+      </tr>
+      <tr>
+          <td>Email</td>
+          <td>{{userDetails.email}}</td>
+      </tr>
+      <tr>
+        <td>
+          Edit profile
+        </td>
+        <td>
+          <a class="action-btn" (click)="onEdit(userDetails)">
+            <i class="material-icons">edit</i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+          <td colspan="3npm" class="text-center">
+              <input type="button" (click)="onLogout()" value="Logout" />
+          </td>
+      </tr>
+  </tbody>
+</table>
+</div>

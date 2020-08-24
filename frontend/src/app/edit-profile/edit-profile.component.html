@@ -1,0 +1,48 @@
+<app-user-nav-bar></app-user-nav-bar>
+<div class="wrapper content">
+  <div id="formContent">
+    <h2 id="Title">Edit User</h2>
+    <form #editForm="ngForm" (ngSubmit)="editForm.valid && onSubmit(editForm)">
+      <input type="text" #firstName="ngModel" [(ngModel)]="userService.selectedUser.firstName" name="firstName"
+        placeholder="First Name" required [ngClass]="{'invalid-textbox' :editForm.submitted && !firstName.valid }">
+      <div *ngIf="editForm.submitted && !firstName.valid">
+        <label class="validation-message">This field is required.</label>
+      </div>
+      <input type="text" #lastName="ngModel" [(ngModel)]="userService.selectedUser.lastName" name="lastName"
+        placeholder="Last Name" required [ngClass]="{'invalid-textbox' :editForm.submitted && !lastName.valid }">
+      <div *ngIf="editForm.submitted && !lastName.valid">
+        <label class="validation-message">This field is required.</label>
+      </div>
+      <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+        required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :editForm.submitted && !email.valid }">
+      <div *ngIf="editForm.submitted && email.errors">
+        <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+        <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+      </div>
+      <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password"
+        placeholder="Password" minlength="8" required [pattern]="passwordRegex"
+        [ngClass]="{'invalid-textbox' :editForm.submitted && !password.valid }">
+      <div *ngIf="editForm.submitted && password.errors">
+        <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+        <label *ngIf="password.errors.minlength" class="validation-message">Password should be atleast 8 characters
+          long.</label>
+        <label *ngIf="password.errors.pattern" class="validation-message">Password must contain atleast one lowercase
+          letter, one uppercase letter, one numeric digit, and one special character</label>
+      </div>
+      <select name="subscription" #subscription="ngModel" [(ngModel)]="userService.selectedUser.subscription"
+        [ngClass]="{'invalid-textbox' :editForm.submitted && !subscription.valid }" required>
+        <option value="basic" selected>Basic(10 Gb Storage)</option>
+        <option value="standard">Standard(50 GB Storage)</option>
+        <option value="premium">Premium(100 GB Storage)</option>
+      </select>
+      <div *ngIf="editForm.submitted && !subscription.valid">
+        <label class="validation-message">Select a subscription plan.</label>
+      </div>
+      <input type="submit" value="Update">
+    </form>
+    <!-- Success message -->
+    <div class="success" *ngIf="showSucessMessage">
+      Saved successfully
+    </div>
+  </div>
+</div>
